@@ -8,11 +8,43 @@
 import UIKit
 
 class SearchController: UIViewController {
+    
+    var nome: [String] = ["Poodle", "Pastor alemao", "salsicha", "hotvailer"]
+    var grup: [String] = ["Peludo", "vigia", "caçador", "brigão"]
+    var origin: [String] = ["EUA", "alemanha", "Brasil", "França"]
 
+
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .darkGray
+        
+        tableView.dataSource = self
+        
+        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "reusableCell")
+  
 
-        // Do any additional setup after loading the view.
+    }
+}
+extension SearchController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return nome.count
+    }
+
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell", for: indexPath) as! TableViewCell
+
+        cell.nameLabel.text = nome[indexPath.row]
+        cell.grupLabel.text = grup[indexPath.row]
+        cell.originLabel.text = origin[indexPath.row]
+        
+        return cell
     }
 }

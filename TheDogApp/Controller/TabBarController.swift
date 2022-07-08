@@ -22,14 +22,11 @@ class TabBarController: UITabBarController {
         guard let items = self.tabBar.items else { return }
         
         let images = ["house","magnifyingglass"]
-        
         for x in 0...1 {
             items[x].image = UIImage(systemName: images[x])
         }
         
         self.tabBar.backgroundColor = .systemGray
         self.tabBar.tintColor = .black
-        
-        
     }
 }

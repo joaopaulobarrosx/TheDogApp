@@ -16,6 +16,10 @@
 		5F19977628777D90002A2DFB /* HomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F19977428777D90002A2DFB /* HomeController.xib */; };
 		5F19977928777DC5002A2DFB /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F19977728777DC5002A2DFB /* SearchController.swift */; };
 		5F19977A28777DC5002A2DFB /* SearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F19977828777DC5002A2DFB /* SearchController.xib */; };
+		5FB90F482877BC4100B04644 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB90F462877BC4100B04644 /* CollectionViewCell.swift */; };
+		5FB90F492877BC4100B04644 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FB90F472877BC4100B04644 /* CollectionViewCell.xib */; };
+		5FB90F4C2877E1BC00B04644 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB90F4A2877E1BC00B04644 /* TableViewCell.swift */; };
+		5FB90F4D2877E1BC00B04644 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FB90F4B2877E1BC00B04644 /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		5F19977428777D90002A2DFB /* HomeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeController.xib; sourceTree = "<group>"; };
 		5F19977728777DC5002A2DFB /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		5F19977828777DC5002A2DFB /* SearchController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchController.xib; sourceTree = "<group>"; };
+		5FB90F462877BC4100B04644 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		5FB90F472877BC4100B04644 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		5FB90F4A2877E1BC00B04644 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		5FB90F4B2877E1BC00B04644 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,8 @@
 			children = (
 				5F19977428777D90002A2DFB /* HomeController.xib */,
 				5F19977828777DC5002A2DFB /* SearchController.xib */,
+				5FB90F472877BC4100B04644 /* CollectionViewCell.xib */,
+				5FB90F4B2877E1BC00B04644 /* TableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -89,6 +99,8 @@
 				5F19976F28777D0D002A2DFB /* TabBarController.swift */,
 				5F19977328777D90002A2DFB /* HomeController.swift */,
 				5F19977728777DC5002A2DFB /* SearchController.swift */,
+				5FB90F462877BC4100B04644 /* CollectionViewCell.swift */,
+				5FB90F4A2877E1BC00B04644 /* TableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -159,9 +171,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F19976828777CB5002A2DFB /* LaunchScreen.storyboard in Resources */,
+				5FB90F4D2877E1BC00B04644 /* TableViewCell.xib in Resources */,
 				5F19977628777D90002A2DFB /* HomeController.xib in Resources */,
 				5F19976528777CB5002A2DFB /* Assets.xcassets in Resources */,
 				5F19977A28777DC5002A2DFB /* SearchController.xib in Resources */,
+				5FB90F492877BC4100B04644 /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,8 +188,10 @@
 			files = (
 				5F19977528777D90002A2DFB /* HomeController.swift in Sources */,
 				5F19977928777DC5002A2DFB /* SearchController.swift in Sources */,
+				5FB90F482877BC4100B04644 /* CollectionViewCell.swift in Sources */,
 				5F19977028777D0D002A2DFB /* TabBarController.swift in Sources */,
 				5F19975C28777CB0002A2DFB /* AppDelegate.swift in Sources */,
+				5FB90F4C2877E1BC00B04644 /* TableViewCell.swift in Sources */,
 				5F19975E28777CB0002A2DFB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
