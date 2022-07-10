@@ -8,11 +8,14 @@
 import UIKit
 
 class HomeController: UIViewController {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
+//    let breedManager = BreedManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        breedManager.fetchBreed()
         
 //        let layout = UICollectionViewFlowLayout()
 //        layout.itemSize = CGSize(width: 120, height: 120)
@@ -23,10 +26,13 @@ class HomeController: UIViewController {
         collectionView.dataSource = self
     }
 }
+
 extension HomeController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        print("You tapped me \(indexPath)")
+        print("You tapped me \(indexPath.row)")
+        let detailedController = DetailedController()
+        self.present(detailedController, animated: true)
     }
 }
 

@@ -16,15 +16,13 @@ class CollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-                labelBreed.text = "Nome da raca" // ver como fazer isso
+        labelBreed.text = "Nome da raca" // ver como fazer isso
     }
+    
     public func configure(with image: UIImage){
         imageView.image = image
     }
-//    public func configureLabel(with label: UILabel){ // verificar porque nao ta aparecendo
-//        labelBreed.text = "Nome da raca"
-//    }
-//
+
     static func nib() -> UINib {
         return UINib(nibName: "CollectionViewCell", bundle: nil)
     }

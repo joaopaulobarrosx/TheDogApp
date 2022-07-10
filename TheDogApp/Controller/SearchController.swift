@@ -20,7 +20,7 @@ class SearchController: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
-        
+        tableView.delegate = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "reusableCell")
   
 
@@ -46,5 +46,15 @@ extension SearchController: UITableViewDataSource {
         cell.originLabel.text = origin[indexPath.row]
         
         return cell
+    }
+}
+
+extension SearchController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailedController = DetailedController()
+        self.present(detailedController, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        print("You tapped \(indexPath.row)")
     }
 }
