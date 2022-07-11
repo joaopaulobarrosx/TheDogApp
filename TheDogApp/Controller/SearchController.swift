@@ -10,9 +10,7 @@ import UIKit
 class SearchController: UIViewController {
     
     let name = UserDefaults.standard.array(forKey: "nameKey") as! [String]
-    let breed_group = UserDefaults.standard.array(forKey: "groupKey") as! [String]
-    let origin = UserDefaults.standard.array(forKey: "originKey") as! [String]
-
+    let breed_group = UserDefaults.standard.array(forKey: "groupKey") as! [String]    
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -40,11 +38,12 @@ extension SearchController: UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell", for: indexPath) as! TableViewCell
-
-        cell.nameLabel.text = name[indexPath.row]
-        cell.grupLabel.text = "Breed group: \(breed_group[indexPath.row])"
-//        cell.originLabel.text = "Origin: \(origin[indexPath.row])"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell", for: indexPath) as! TableViewCell
+        
+        DispatchQueue.main.async() {
+            cell.nameLabel.text = self.name[indexPath.row]
+            cell.grupLabel.text = "Breed group: \(self.breed_group[indexPath.row])"
+        }
         
         return cell
     }
@@ -56,7 +55,7 @@ extension SearchController: UITableViewDelegate {
         let detailedController = DetailedController()
         self.present(detailedController, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
-
+        detailedController.index = indexPath.row
         print("You tapped \(indexPath.row)")
     }
 }

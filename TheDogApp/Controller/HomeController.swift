@@ -10,22 +10,19 @@ import UIKit
 class HomeController: UIViewController {
     
     var breedManager = BreedManager()
+
   
     override func viewWillAppear(_ animated: Bool) {
         breedManager.fetchBreed()
     }
-    var name = UserDefaults.standard.array(forKey: "nameKey") as! [String]
+    let name = UserDefaults.standard.array(forKey: "nameKey") as! [String]
     let image = UserDefaults.standard.array(forKey: "imageKey") as! [String]
 
-
     @IBOutlet weak var collectionView: UICollectionView!
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
 //        let layout = UICollectionViewFlowLayout()
 //        layout.itemSize = CGSize(width: 120, height: 120)
 //        collectionView.collectionViewLayout = layout
@@ -41,6 +38,8 @@ extension HomeController: UICollectionViewDelegate{
         collectionView.deselectItem(at: indexPath, animated: true)
         print("You tapped me \(indexPath.row)")
         let detailedController = DetailedController()
+        
+        detailedController.index = indexPath.row
         self.present(detailedController, animated: true)
     }
 }
@@ -52,8 +51,11 @@ extension HomeController: UICollectionViewDataSource{
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
-        cell.labelBreed.text = "\(name[indexPath.row])"
-        cell.imageView.downloaded(from: image[indexPath.row])
+        DispatchQueue.main.async() {
+            cell.labelBreed.text = "\(self.name[indexPath.row])"
+            cell.imageView.downloaded(from: self.image[indexPath.row])
+        }
+
         
         return cell
     }

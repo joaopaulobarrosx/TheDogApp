@@ -26,7 +26,7 @@ class TabBarController: UITabBarController {
             items[x].image = UIImage(systemName: images[x])
         }
         
-        self.tabBar.backgroundColor = .systemGray
+        self.tabBar.backgroundColor = .darkGray
         self.tabBar.tintColor = .black
     }
 }

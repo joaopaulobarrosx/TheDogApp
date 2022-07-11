@@ -24,7 +24,7 @@ struct BreedManager {
                 
                 do {
                     let dogBreedsResponse = try JSONDecoder().decode([BreedDataModel].self, from: data)
-                    print("SUCESSO AQUI \(dogBreedsResponse[0].image.url)")
+                    print("SUCESSO AQUI ATUALIZANDO DADOSSS")
                                         
                     for i in 0..<dogBreedsResponse.count {
                         name.append(dogBreedsResponse[i].name)
@@ -49,11 +49,11 @@ struct BreedManager {
                             origin.append(dogBreedsResponse[i].origin!)
                             UserDefaults.standard.set(origin, forKey: "originKey")
                         }
-                        print(origin[i])
+
                     }
                     for i in 0..<dogBreedsResponse.count {
                         if dogBreedsResponse[i].bred_for == nil {
-                            bred_for.append(".")
+                            bred_for.append("Undefined")
                         }else {
                             bred_for.append(dogBreedsResponse[i].bred_for!)
                             UserDefaults.standard.set(bred_for, forKey: "forKey")
@@ -64,11 +64,9 @@ struct BreedManager {
                             temperament.append(".")
                         }else {
                             temperament.append(dogBreedsResponse[i].temperament!)
-                            UserDefaults.standard.set(temperament, forKey: "forKey")
+                            UserDefaults.standard.set(temperament, forKey: "tempKey")
                         }
                     }
-                    print(origin.count)
-                    print(name.count)
 
                     
                     //-MARK

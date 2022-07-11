@@ -11,7 +11,6 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var grupLabel: UILabel!
-    @IBOutlet weak var originLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
