@@ -16,22 +16,27 @@ class HomeController: UIViewController {
         return UserDefaults.standard.array(forKey: "imageKey")as? [String] ?? ["primeiraTela"]
     }
     
-//    let name = UserDefaults.standard.array(forKey: "nameKey") as! [String]
-//    let image = UserDefaults.standard.array(forKey: "imageKey") as! [String]
-
-
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        collectionView.reloadData() // excluir depois de resolver o problema da SpinnerController
+        print("VIEWWILLAPPEAR")
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        let layout = UICollectionViewFlowLayout()
-//        layout.itemSize = CGSize(width: 120, height: 120)
-//        collectionView.collectionViewLayout = layout
         
+
         collectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.reloadData()
+        print("VIEWDIDLOAD")
+        
+        //        let layout = UICollectionViewFlowLayout()
+        //        layout.itemSize = CGSize(width: 120, height: 120)
+        //        collectionView.collectionViewLayout = layout
     }
 }
 

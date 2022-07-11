@@ -9,7 +9,6 @@ import UIKit
 
 class DetailedController: UIViewController {
     
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var temperamentLabel: UILabel!

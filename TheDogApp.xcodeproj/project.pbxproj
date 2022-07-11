@@ -24,6 +24,8 @@
 		5FB90F4D2877E1BC00B04644 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FB90F4B2877E1BC00B04644 /* TableViewCell.xib */; };
 		5FB90F502877EE8000B04644 /* DetailedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB90F4E2877EE7F00B04644 /* DetailedController.swift */; };
 		5FB90F512877EE8000B04644 /* DetailedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FB90F4F2877EE7F00B04644 /* DetailedController.xib */; };
+		5FC9A0AA287CCE7900CCF6C7 /* SpinnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9A0A8287CCE7900CCF6C7 /* SpinnerController.swift */; };
+		5FC9A0AB287CCE7900CCF6C7 /* SpinnerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC9A0A9287CCE7900CCF6C7 /* SpinnerController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		5FB90F4B2877E1BC00B04644 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		5FB90F4E2877EE7F00B04644 /* DetailedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedController.swift; sourceTree = "<group>"; };
 		5FB90F4F2877EE7F00B04644 /* DetailedController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedController.xib; sourceTree = "<group>"; };
+		5FC9A0A8287CCE7900CCF6C7 /* SpinnerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerController.swift; sourceTree = "<group>"; };
+		5FC9A0A9287CCE7900CCF6C7 /* SpinnerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpinnerController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 				5FB90F4F2877EE7F00B04644 /* DetailedController.xib */,
 				5FB90F472877BC4100B04644 /* CollectionViewCell.xib */,
 				5FB90F4B2877E1BC00B04644 /* TableViewCell.xib */,
+				5FC9A0A9287CCE7900CCF6C7 /* SpinnerController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 				5FB90F4E2877EE7F00B04644 /* DetailedController.swift */,
 				5FB90F462877BC4100B04644 /* CollectionViewCell.swift */,
 				5FB90F4A2877E1BC00B04644 /* TableViewCell.swift */,
+				5FC9A0A8287CCE7900CCF6C7 /* SpinnerController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -183,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F19976828777CB5002A2DFB /* LaunchScreen.storyboard in Resources */,
+				5FC9A0AB287CCE7900CCF6C7 /* SpinnerController.xib in Resources */,
 				5FB90F4D2877E1BC00B04644 /* TableViewCell.xib in Resources */,
 				5F19977628777D90002A2DFB /* HomeController.xib in Resources */,
 				5F19976528777CB5002A2DFB /* Assets.xcassets in Resources */,
@@ -200,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F19977528777D90002A2DFB /* HomeController.swift in Sources */,
+				5FC9A0AA287CCE7900CCF6C7 /* SpinnerController.swift in Sources */,
 				5F19977928777DC5002A2DFB /* SearchController.swift in Sources */,
 				5FB90F482877BC4100B04644 /* CollectionViewCell.swift in Sources */,
 				5F271EF5287B55AB00A70A13 /* BreedDataModel.swift in Sources */,
