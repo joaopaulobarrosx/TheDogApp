@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchController" customModule="TheDogApp" customModuleProvider="target">
             <connections>
+                <outlet property="searchBar" destination="TAi-U5-Y8N" id="OAW-HW-GXQ"/>
+                <outlet property="tableView" destination="zJm-yW-80O" id="00b-4L-BBI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +19,26 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zJm-yW-80O">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <searchBar key="tableHeaderView" contentMode="redraw" id="TAi-U5-Y8N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </searchBar>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="139" y="100"/>
+            <constraints>
+                <constraint firstItem="zJm-yW-80O" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Uwb-GQ-jae"/>
+                <constraint firstAttribute="bottom" secondItem="zJm-yW-80O" secondAttribute="bottom" id="VlE-UD-goC"/>
+                <constraint firstItem="zJm-yW-80O" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WhV-aR-DHl"/>
+                <constraint firstItem="zJm-yW-80O" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="gsv-wm-7nV"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
         </view>
     </objects>
     <resources>
