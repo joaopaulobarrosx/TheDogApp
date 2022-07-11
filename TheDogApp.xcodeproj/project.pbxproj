@@ -95,9 +95,9 @@
 			children = (
 				5F19977428777D90002A2DFB /* HomeController.xib */,
 				5F19977828777DC5002A2DFB /* SearchController.xib */,
+				5FB90F4F2877EE7F00B04644 /* DetailedController.xib */,
 				5FB90F472877BC4100B04644 /* CollectionViewCell.xib */,
 				5FB90F4B2877E1BC00B04644 /* TableViewCell.xib */,
-				5FB90F4F2877EE7F00B04644 /* DetailedController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -108,9 +108,9 @@
 				5F19976F28777D0D002A2DFB /* TabBarController.swift */,
 				5F19977328777D90002A2DFB /* HomeController.swift */,
 				5F19977728777DC5002A2DFB /* SearchController.swift */,
+				5FB90F4E2877EE7F00B04644 /* DetailedController.swift */,
 				5FB90F462877BC4100B04644 /* CollectionViewCell.swift */,
 				5FB90F4A2877E1BC00B04644 /* TableViewCell.swift */,
-				5FB90F4E2877EE7F00B04644 /* DetailedController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

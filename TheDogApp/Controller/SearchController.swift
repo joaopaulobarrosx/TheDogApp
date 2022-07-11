@@ -9,9 +9,9 @@ import UIKit
 
 class SearchController: UIViewController {
     
-    var nome: [String] = ["Poodle", "Pastor alemao", "salsicha", "hotvailer"]
-    var grup: [String] = ["Peludo", "vigia", "caçador", "brigão"]
-    var origin: [String] = ["EUA", "alemanha", "Brasil", "França"]
+    let name = UserDefaults.standard.array(forKey: "nameKey") as! [String]
+    let breed_group = UserDefaults.standard.array(forKey: "groupKey") as! [String]
+    let origin = UserDefaults.standard.array(forKey: "originKey") as! [String]
 
 
     @IBOutlet weak var tableView: UITableView!
@@ -25,6 +25,7 @@ class SearchController: UIViewController {
   
 
     }
+
 }
 extension SearchController: UITableViewDataSource {
     
@@ -34,19 +35,20 @@ extension SearchController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nome.count
+        return name.count
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell", for: indexPath) as! TableViewCell
 
-        cell.nameLabel.text = nome[indexPath.row]
-        cell.grupLabel.text = grup[indexPath.row]
-        cell.originLabel.text = origin[indexPath.row]
+        cell.nameLabel.text = name[indexPath.row]
+        cell.grupLabel.text = "Breed group: \(breed_group[indexPath.row])"
+//        cell.originLabel.text = "Origin: \(origin[indexPath.row])"
         
         return cell
     }
+    
 }
 
 extension SearchController: UITableViewDelegate {

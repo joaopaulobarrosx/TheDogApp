@@ -12,11 +12,13 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var labelBreed: UILabel!
     
+    let name = UserDefaults.standard.array(forKey: "originKey") as! [String]
+    
     static let identifier = "MyCollectionViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        labelBreed.text = "Nome da raca" // ver como fazer isso
+//        labelBreed.text = "Nome da raca" // ver como fazer isso
     }
     
     public func configure(with image: UIImage){

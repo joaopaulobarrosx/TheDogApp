@@ -21,7 +21,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="28" id="Wmn-h6-W4F"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -42,8 +42,8 @@
             </constraints>
             <size key="customSize" width="209" height="217"/>
             <connections>
-                <outlet property="imageView" destination="h9V-LG-GMq" id="hIA-Pc-jDs"/>
-                <outlet property="labelBreed" destination="wFo-Cx-fkq" id="j6q-WF-f27"/>
+                <outlet property="imageView" destination="h9V-LG-GMq" id="AY2-fG-RkZ"/>
+                <outlet property="labelBreed" destination="wFo-Cx-fkq" id="mUC-Sh-xw0"/>
             </connections>
             <point key="canvasLocation" x="252.89855072463769" y="36.495535714285715"/>
         </collectionViewCell>
