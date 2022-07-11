@@ -9,7 +9,7 @@ import Foundation
 
 struct BreedManager {
     
-    mutating func fetchBreed() {
+    func fetchBreed() {
         let url = URL(string: "https://api.thedogapi.com/v1/breeds?api_key=890279e4-5446-4738-9f75-2388912d70f7&order=ASC")!
         let urlRequest = NSMutableURLRequest(url: url)
         URLSession.shared.dataTask(with: urlRequest as URLRequest) { data, response, error in

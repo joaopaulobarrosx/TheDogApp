@@ -9,14 +9,16 @@ import UIKit
 
 class HomeController: UIViewController {
     
-    var breedManager = BreedManager()
-
-  
-    override func viewWillAppear(_ animated: Bool) {
-        breedManager.fetchBreed()
+    func getName() -> [String] {
+        return UserDefaults.standard.array(forKey: "nameKey")as? [String] ?? ["primeiraTela"]
     }
-    let name = UserDefaults.standard.array(forKey: "nameKey") as! [String]
-    let image = UserDefaults.standard.array(forKey: "imageKey") as! [String]
+    func getImage() -> [String] {
+        return UserDefaults.standard.array(forKey: "imageKey")as? [String] ?? ["primeiraTela"]
+    }
+    
+//    let name = UserDefaults.standard.array(forKey: "nameKey") as! [String]
+//    let image = UserDefaults.standard.array(forKey: "imageKey") as! [String]
+
 
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -36,9 +38,7 @@ class HomeController: UIViewController {
 extension HomeController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        print("You tapped me \(indexPath.row)")
         let detailedController = DetailedController()
-        
         detailedController.index = indexPath.row
         self.present(detailedController, animated: true)
     }
@@ -47,16 +47,15 @@ extension HomeController: UICollectionViewDelegate{
 extension HomeController: UICollectionViewDataSource{
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return name.count
+        return getName().count
+        
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
         DispatchQueue.main.async() {
-            cell.labelBreed.text = "\(self.name[indexPath.row])"
-            cell.imageView.downloaded(from: self.image[indexPath.row])
+            cell.labelBreed.text = self.getName()[indexPath.row]
+            cell.imageView.downloaded(from: self.getImage()[indexPath.row])
         }
-
-        
         return cell
     }
     
