@@ -28,12 +28,6 @@ class DetailedController: UIViewController {
         return UserDefaults.standard.array(forKey: "tempKey")as? [String] ?? ["primeiraTela"]
     }
 
-//    let name = UserDefaults.standard.array(forKey: "nameKey") as! [String]
-//    let breed_group = UserDefaults.standard.array(forKey: "groupKey") as! [String]
-//    let bred_for = UserDefaults.standard.array(forKey: "forKey") as! [String]
-//    let temperament = UserDefaults.standard.array(forKey: "tempKey") as! [String]
-//    let image = UserDefaults.standard.array(forKey: "imageKey") as! [String]
-
     override func viewWillAppear(_ animated: Bool) {
         DispatchQueue.main.async() {
             self.breedLabel.text = self.getName()[self.index]

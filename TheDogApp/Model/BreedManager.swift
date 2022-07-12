@@ -68,9 +68,6 @@ struct BreedManager {
                         }
                     }
 
-                    
-                    //-MARK
-
                 } catch  {
                     print("ERRO ATUALIZANDO DADOS \(error)")
                 }
@@ -78,15 +75,3 @@ struct BreedManager {
         }.resume()
     }
 }
-
-
-////                UserDefaults.standard.set(data, forKey: "CHAVE")
-//                let dadosSalvos = UserDefaults.standard.object(forKey: "CHAVE")
-//
-//                do {
-//                    let dogBreedsResponse = try JSONDecoder().decode([BreedDataModel].self, from: dadosSalvos as! Data)
-//                    print("SUCESSO AQUI \(dogBreedsResponse[0].image.url)")
-//                } catch  {
-//                    print("ERRO AQUI \(error)")
-//                }
-//            }

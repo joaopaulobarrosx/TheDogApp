@@ -17,21 +17,43 @@ class HomeController: UIViewController {
     }
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+
+    func indicator() {
+        DispatchQueue.main.async {
+            for _ in 0...10000 {
+                Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (t) in
+                    if self.getName() == ["primeiraTela"] {
+                        self.collectionView.isHidden = false
+                        self.spinner.startAnimating()
+                        self.collectionView.isHidden = true
+                        self.collectionView.reloadData()
+                    }else{
+                        self.spinner.stopAnimating()
+                        self.spinner.isHidden = true
+                        self.collectionView.isHidden = false
+//                        break
+                    }
+                }
+            }
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
-        collectionView.reloadData() // excluir depois de resolver o problema da SpinnerController
-        print("VIEWWILLAPPEAR")
+        indicator()
     }
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-
+    private func collectionUpdate(){
         collectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.reloadData()
+        
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        collectionUpdate()
+
         print("VIEWDIDLOAD")
         
         //        let layout = UICollectionViewFlowLayout()
