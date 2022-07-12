@@ -9,22 +9,27 @@ import UIKit
 
 class SearchController: UIViewController {
     
-//    let name = UserDefaults.standard.array(forKey: "nameKey") as! [String]
-//    let breed_group = UserDefaults.standard.array(forKey: "groupKey") as! [String]
-    let homeController = HomeController()
-    
+//    let homeController = HomeController()
+    func getName() -> [String] {
+        return UserDefaults.standard.array(forKey: "nameKey")as? [String] ?? ["primeiraTela"]
+    }
     func getGroup() -> [String] {
         return UserDefaults.standard.array(forKey: "groupKey")as? [String] ?? ["primeiraTela"]
     }
+    
+    var filteredData: [String] = []
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "reusableCell")
+        searchBar.delegate = self
+        filteredData = getName()
 
     }
 
@@ -38,7 +43,7 @@ extension SearchController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return homeController.getName().count
+        return filteredData.count
     }
 
     
@@ -46,8 +51,8 @@ extension SearchController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell", for: indexPath) as! TableViewCell
         
         DispatchQueue.main.async() {
-            cell.nameLabel.text = self.homeController.getName()[indexPath.row]
-            cell.grupLabel.text = "Breed group: \(self.getGroup()[indexPath.row])"
+            cell.nameLabel.text = self.filteredData[indexPath.row]
+            cell.grupLabel.text = "Breed group: \(self.filteredData[indexPath.row])"
         }
         
         return cell
@@ -61,5 +66,23 @@ extension SearchController: UITableViewDelegate {
         self.present(detailedController, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
         detailedController.index = indexPath.row
+    }
+}
+
+extension SearchController: UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        filteredData = []
+        if searchText == "" {
+            filteredData = getName()
+        } else {
+            for nomes in getName() {
+                if nomes.lowercased().contains(searchText.lowercased()) {
+                    filteredData.append(nomes)
+                }
+            }
+        }
+        self.tableView.reloadData()
     }
 }
