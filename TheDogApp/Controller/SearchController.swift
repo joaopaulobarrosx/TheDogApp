@@ -16,19 +16,28 @@ class SearchController: UIViewController {
     func getGroup() -> [String] {
         return UserDefaults.standard.array(forKey: "groupKey")as? [String] ?? ["primeiraTela"]
     }
+    func getId() -> [Int] {
+        return UserDefaults.standard.array(forKey: "idKey")as? [Int] ?? [0]
+    }
     
     var filteredData: [String] = []
+    
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    private func tableUpdate(){
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "reusableCell")
         searchBar.delegate = self
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableUpdate()
         filteredData = getName()
 
     }
@@ -76,13 +85,17 @@ extension SearchController: UISearchBarDelegate {
         filteredData = []
         if searchText == "" {
             filteredData = getName()
+
         } else {
             for nomes in getName() {
                 if nomes.lowercased().contains(searchText.lowercased()) {
                     filteredData.append(nomes)
                 }
+                // aqui
+                
             }
         }
         self.tableView.reloadData()
     }
 }
+
