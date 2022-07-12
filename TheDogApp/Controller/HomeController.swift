@@ -32,7 +32,6 @@ class HomeController: UIViewController {
                         self.spinner.stopAnimating()
                         self.spinner.isHidden = true
                         self.collectionView.isHidden = false
-//                        break
                     }
                 }
             }
@@ -42,25 +41,19 @@ class HomeController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         indicator()
     }
-//    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout)
     
     private func collectionUpdate(){
         collectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.reloadData()
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionUpdate()
 
-        print("VIEWDIDLOAD")
-        
-        //        let layout = UICollectionViewFlowLayout()
-        //        layout.itemSize = CGSize(width: 120, height: 120)
-        //        collectionView.collectionViewLayout = layout
     }
 }
 
@@ -77,8 +70,8 @@ extension HomeController: UICollectionViewDataSource{
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return getName().count
-        
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
         DispatchQueue.main.async() {
@@ -87,8 +80,8 @@ extension HomeController: UICollectionViewDataSource{
         }
         return cell
     }
-    
 }
+
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
         contentMode = mode
@@ -110,9 +103,3 @@ extension UIImageView {
     }
 }
 
-
-//extension HomeController: UICollectionViewDelegateFlowLayout{
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 120, height: 120)
-//    }
-//}
