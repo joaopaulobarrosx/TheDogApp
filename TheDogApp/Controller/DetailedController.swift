@@ -36,9 +36,9 @@ class DetailedController: UIViewController {
             self.groupLabel.text = "Group: \(self.getGroup()[self.index])"
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 }
 

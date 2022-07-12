@@ -9,7 +9,6 @@ import UIKit
 
 class SearchController: UIViewController {
     
-//    let homeController = HomeController()
     func getName() -> [String] {
         return UserDefaults.standard.array(forKey: "nameKey")as? [String] ?? ["primeiraTela"]
     }
@@ -31,7 +30,6 @@ class SearchController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "reusableCell")
         searchBar.delegate = self
-        
     }
     
     override func viewDidLoad() {
@@ -41,12 +39,11 @@ class SearchController: UIViewController {
         filteredData = getName()
 
     }
-
 }
+
 extension SearchController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -54,7 +51,6 @@ extension SearchController: UITableViewDataSource {
         
         return filteredData.count
     }
-
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell", for: indexPath) as! TableViewCell
@@ -63,10 +59,8 @@ extension SearchController: UITableViewDataSource {
             cell.nameLabel.text = self.filteredData[indexPath.row]
             cell.grupLabel.text = "Breed group: \(self.filteredData[indexPath.row])"
         }
-        
         return cell
     }
-    
 }
 
 extension SearchController: UITableViewDelegate {
@@ -91,8 +85,6 @@ extension SearchController: UISearchBarDelegate {
                 if nomes.lowercased().contains(searchText.lowercased()) {
                     filteredData.append(nomes)
                 }
-                // aqui
-                
             }
         }
         self.tableView.reloadData()
