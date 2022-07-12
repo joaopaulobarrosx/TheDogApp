@@ -22,13 +22,18 @@ class SearchController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    private func tableUpdate(){
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "reusableCell")
         searchBar.delegate = self
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableUpdate()
         filteredData = getName()
 
     }

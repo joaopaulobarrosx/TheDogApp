@@ -42,6 +42,8 @@ class HomeController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         indicator()
     }
+//    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout)
+    
     private func collectionUpdate(){
         collectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
         collectionView.delegate = self
