@@ -68,7 +68,9 @@ extension SearchController: UITableViewDelegate {
         let detailedController = DetailedController()
         self.present(detailedController, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
-        detailedController.index = indexPath.row
+        let id = getId()[indexPath.row]
+        
+        detailedController.index = id
     }
 }
 

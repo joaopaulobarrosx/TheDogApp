@@ -13,6 +13,7 @@ class DetailedController: UIViewController {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var temperamentLabel: UILabel!
     @IBOutlet weak var groupLabel: UILabel!
+    @IBOutlet weak var imagemView: UIImageView!
     var index = 0
     
     func getName() -> [String] {
@@ -27,6 +28,10 @@ class DetailedController: UIViewController {
     func getTemperament() -> [String] {
         return UserDefaults.standard.array(forKey: "tempKey")as? [String] ?? ["primeiraTela"]
     }
+    func getImage() -> [String] {
+        return UserDefaults.standard.array(forKey: "imageKey")as? [String] ?? ["primeiraTela"]
+    }
+//    override init()
 
     override func viewWillAppear(_ animated: Bool) {
         DispatchQueue.main.async() {
@@ -34,6 +39,7 @@ class DetailedController: UIViewController {
             self.categoryLabel.text = "Category: \(self.getCategory()[self.index])"
             self.temperamentLabel.text = "Temperament: \(self.getTemperament()[self.index])"
             self.groupLabel.text = "Group: \(self.getGroup()[self.index])"
+            self.imagemView.downloaded(from: self.getImage()[self.index])
         }
     }
     
