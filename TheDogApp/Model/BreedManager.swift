@@ -21,11 +21,12 @@ struct BreedManager {
                 var bred_for : [String] = []
                 var temperament : [String] = []
                 var image : [String] = []
-                var id : [String] = []
+                var id : [Int] = []
                 
                 do {
                     let dogBreedsResponse = try JSONDecoder().decode([BreedDataModel].self, from: data)
-                                        
+                    
+                    print("DADOS ATUALIZADOSS")
                     for i in 0..<dogBreedsResponse.count {
                         name.append(dogBreedsResponse[i].name)
                         UserDefaults.standard.set(name, forKey: "nameKey")
@@ -68,7 +69,7 @@ struct BreedManager {
                         }
                     }
                     for i in 0..<dogBreedsResponse.count {
-                        id.append("\(i)")
+                        id.append(i)
                         UserDefaults.standard.set(id, forKey: "idKey")
                     }
                 } catch  {

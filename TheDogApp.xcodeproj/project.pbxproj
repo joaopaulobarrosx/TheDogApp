@@ -24,6 +24,7 @@
 		5FB90F4D2877E1BC00B04644 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FB90F4B2877E1BC00B04644 /* TableViewCell.xib */; };
 		5FB90F502877EE8000B04644 /* DetailedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB90F4E2877EE7F00B04644 /* DetailedController.swift */; };
 		5FB90F512877EE8000B04644 /* DetailedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FB90F4F2877EE7F00B04644 /* DetailedController.xib */; };
+		5FD578C6287E5337004FBC08 /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD578C5287E5337004FBC08 /* Extension+UIImageView.swift */; };
 		A021DA6040F714F1575CCDD1 /* Pods_TheDogApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 159E4FB490BBBECA8F985F21 /* Pods_TheDogApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		5FB90F4B2877E1BC00B04644 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		5FB90F4E2877EE7F00B04644 /* DetailedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedController.swift; sourceTree = "<group>"; };
 		5FB90F4F2877EE7F00B04644 /* DetailedController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedController.xib; sourceTree = "<group>"; };
+		5FD578C5287E5337004FBC08 /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
 		BE5A11524B0CB7DA7AC18F70 /* Pods-TheDogApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheDogApp.release.xcconfig"; path = "Target Support Files/Pods-TheDogApp/Pods-TheDogApp.release.xcconfig"; sourceTree = "<group>"; };
 		E19794E512222856DAF4334D /* Pods-TheDogApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheDogApp.debug.xcconfig"; path = "Target Support Files/Pods-TheDogApp/Pods-TheDogApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +92,7 @@
 				5F19976428777CB5002A2DFB /* Assets.xcassets */,
 				5F19976628777CB5002A2DFB /* LaunchScreen.storyboard */,
 				5F19976928777CB5002A2DFB /* Info.plist */,
+				5FD578C4287E52F8004FBC08 /* Commons */,
 				5F19977D28777E22002A2DFB /* Model */,
 				5F19977B28777DF3002A2DFB /* View */,
 				5F19977C28777E14002A2DFB /* Controller */,
@@ -129,6 +132,14 @@
 				5F271EEC287B109800A70A13 /* BreedManager.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5FD578C4287E52F8004FBC08 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				5FD578C5287E5337004FBC08 /* Extension+UIImageView.swift */,
+			);
+			name = Commons;
 			sourceTree = "<group>";
 		};
 		DF6A6477D01884A6061C346B /* Frameworks */ = {
@@ -253,6 +264,7 @@
 				5F19977928777DC5002A2DFB /* SearchController.swift in Sources */,
 				5FB90F482877BC4100B04644 /* CollectionViewCell.swift in Sources */,
 				5F271EF5287B55AB00A70A13 /* BreedDataModel.swift in Sources */,
+				5FD578C6287E5337004FBC08 /* Extension+UIImageView.swift in Sources */,
 				5FB90F502877EE8000B04644 /* DetailedController.swift in Sources */,
 				5F19977028777D0D002A2DFB /* TabBarController.swift in Sources */,
 				5F271EED287B109800A70A13 /* BreedManager.swift in Sources */,
