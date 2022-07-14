@@ -20,7 +20,6 @@ class SearchController: UIViewController {
     }
     
     var filteredData: [String] = []
-    
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -39,6 +38,7 @@ class SearchController: UIViewController {
         filteredData = getName()
 
     }
+    
 }
 
 extension SearchController: UITableViewDataSource {
@@ -65,12 +65,11 @@ extension SearchController: UITableViewDataSource {
 
 extension SearchController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailedController = DetailedController()
+        let detailedController = DetailedController(index: getId()[indexPath.row])
         self.present(detailedController, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
-        let id = getId()[indexPath.row]
-        
-        detailedController.index = id
+//        let id = getId()[indexPath.row]
+//        detailedController.index = id
     }
 }
 
@@ -79,9 +78,9 @@ extension SearchController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         filteredData = []
+        
         if searchText == "" {
             filteredData = getName()
-
         } else {
             for nomes in getName() {
                 if nomes.lowercased().contains(searchText.lowercased()) {
@@ -90,6 +89,12 @@ extension SearchController: UISearchBarDelegate {
             }
         }
         self.tableView.reloadData()
+    }
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchBar.endEditing(true)
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
     }
 }
 

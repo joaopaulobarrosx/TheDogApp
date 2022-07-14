@@ -15,7 +15,9 @@ class HomeController: UIViewController {
     func getImage() -> [String] {
         return UserDefaults.standard.array(forKey: "imageKey")as? [String] ?? ["primeiraTela"]
     }
-    
+    func getId() -> [Int] {
+        return UserDefaults.standard.array(forKey: "idKey")as? [Int] ?? [0]
+    }
     private let cell = "MyCollectionViewCell"
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -62,7 +64,7 @@ class HomeController: UIViewController {
 extension HomeController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        let detailedController = DetailedController()
+        let detailedController = DetailedController(index: getId()[indexPath.row])
         detailedController.index = indexPath.row
         self.present(detailedController, animated: true)
     }

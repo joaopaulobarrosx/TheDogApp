@@ -14,7 +14,19 @@ class DetailedController: UIViewController {
     @IBOutlet weak var temperamentLabel: UILabel!
     @IBOutlet weak var groupLabel: UILabel!
     @IBOutlet weak var imagemView: UIImageView!
-    var index = 0
+    
+//    var index = 0
+    var index: Int
+    
+    init(index: Int) {
+        self.index = index
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+
     
     func getName() -> [String] {
         return UserDefaults.standard.array(forKey: "nameKey")as? [String] ?? ["primeiraTela"]
